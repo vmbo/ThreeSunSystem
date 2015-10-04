@@ -1,4 +1,4 @@
-﻿//function $(id) { return document.getElementById(id); }
+﻿
 
 window.addEventListener("load", function () {
 
@@ -6,10 +6,16 @@ window.addEventListener("load", function () {
    var distRange = document.getElementById("distRange");
    var graviRange = document.getElementById("graviRange");
 
-   angleRange.oninput = changeCamera;
-   distRange.oninput = changeCamera;
 
-   function changeCamera() {
+   graviRange.value = Ball.prototype.G;
+   angleRange.value = 90;
+   distRange.value = 2000;
+   resetCamera();
+
+   angleRange.oninput = resetCamera;
+   distRange.oninput = resetCamera;
+
+   function resetCamera() {
       var angle = angleRange.value * Math.PI / 180;
       var distance = distRange.value;
 
@@ -19,7 +25,8 @@ window.addEventListener("load", function () {
       camera.lookAt(new THREE.Vector3(0, 0, 0));
    }
 
-
+   
+     
    graviRange.oninput = function () {
       Ball.prototype.G = graviRange.value;
    }
