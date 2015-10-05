@@ -11,13 +11,14 @@
     this.m = b.m ? b.m : this.massa();
     this.fx = 0;
     this.fy = 0;
-  
+    this.track = [];
+
 }
 
 Ball.prototype.massa = function () { return Math.pow(this.r, 3); }
 
 
-Ball.prototype.G = 1; // постоянная гравитации
+Ball.prototype.G = 0.1; // постоянная гравитации
 Ball.prototype.Air = 0;  // постоянное сопротивление среды (0.0001)
 
 
@@ -72,4 +73,13 @@ Ball.prototype.move = function ()
 
     b.x += b.vx;
     b.y += b.vy;
+}
+
+// Траектория - хвост за шаром 
+//
+Ball.prototype.addPointToTrack = function() {
+    this.track.push(new THREE.Vector3(this.x, this.y, 0));
+    var len = this.track.length;
+    if (len > 500)
+        this.track.splice(0, 100);
 }

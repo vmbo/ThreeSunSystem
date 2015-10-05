@@ -7,9 +7,9 @@
    
     <canvas id="canvas1" width="1000" height="800" style="float:left; border:thin" tabindex="0"></canvas>
     <div style="float:left; border:thin">
-        <p><input type="range" min="1" max="90" step="1" value="90" id="angleRange" autofocus> Camera Angle
-        <p><input type="range" min="500" max="10000" step="100" value="1500" id="distRange" autofocus> Camera Dist
-        <p><input type="range" min="0" max="10" step="0.1" value="1.0" id="graviRange"> G
+        <p><input type="range" min="90" max="180" step="1" id="angleRange" autofocus> Camera Angle
+        <p><input type="range" min="500" max="10000" step="100" id="distRange" autofocus> Camera Dist
+        <p><input type="range" min="0" max="1.0" step="0.01" id="graviRange"> G
     </div>
 
     <script src="lib/three.js"></script>
@@ -17,7 +17,7 @@
     <script src="models/ball.js"></script>
     <script src="models/model.js"></script>
     <script src="view/view.js"></script>
-    <script src="controller/controller.js"></script>
     <script src="main.js"></script>
+    <script src="controller/controller.js"></script>
 </body>
 </html>

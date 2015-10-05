@@ -35,8 +35,11 @@ function Model(width, height) {
 
     this.step = function () {
         forses();
-        for (i in this.balls)
+        for (i in this.balls) {
             this.balls[i].move();
+            if (this.chronos % 10 == 0)
+                this.balls[i].addPointToTrack();
+        }
         this.chronos++;
     }
 
