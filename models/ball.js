@@ -78,8 +78,10 @@ Ball.prototype.move = function ()
 // Траектория - хвост за шаром 
 //
 Ball.prototype.addPointToTrack = function() {
-    this.track.push(new THREE.Vector3(this.x, this.y, 0));
-    var len = this.track.length;
-    if (len > 500)
-        this.track.splice(0, 100);
+   this.track.push(new THREE.Vector3(this.x, this.y, 0));
+   if (this.trackLength === undefined && Math.abs(this.track[0].x - this.x) < 10 && Math.abs(this.track[0].y - this.y) < 10 && this.track.length > 10)
+      this.trackLength = this.track.length + 1;
+ 
+   if (this.trackLength !== undefined && this.track.length > this.trackLength)
+        this.track.splice(0, 1);
 }

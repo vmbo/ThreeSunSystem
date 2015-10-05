@@ -29,7 +29,7 @@ function init()
         new Ball({ x: 500, y: 0, r: 5.3, m: 0.1, vx: 0, vy: 0, spin: 0.1 }),     // mars 
         new Ball({ x: 700, y: 0, r: 30, m: 10, vx: 0, vy: 0, spin: 0.1 }),       // jupiter 112/317
         new Ball({ x: 900, y: 0, r: 20, m: 5, vx: 0, vy: 0, spin: 0.1 }),        // saturn
-        new Ball({ x: -2000, y: 1000, r: 5, m: 10000, vx: 0.1, vy: 0, spin: 0 }),  // BLACK HOLE
+        //new Ball({ x: -2000, y: 1000, r: 5, m: 10000, vx: 0.1, vy: 0, spin: 0 }),  // BLACK HOLE
     ];
     for (var i = 1; i < model.balls.length; i++) {
         if (!model.balls[i].vx)
